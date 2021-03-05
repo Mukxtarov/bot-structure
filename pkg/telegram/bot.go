@@ -74,3 +74,19 @@ func (bot *Bot) distributeCommand(message *tgbotapi.Message) bool {
 
 	return isRightCommand
 }
+
+func (bot *Bot) dictributeMessage(message *tgbotapi.Message) bool {
+	if message.Text == "" {
+		return false
+	}
+
+	//
+
+	return true
+}
+
+func (bot *Bot) Sender(msg tgbotapi.Chattable) {
+	if _, err := bot.BotAPI.Send(msg); err != nil {
+		panic(err)
+	}
+}
